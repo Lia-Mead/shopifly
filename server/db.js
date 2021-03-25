@@ -15,3 +15,11 @@ module.exports.showProducts = () => {
     const q = `SELECT * FROM items ORDER BY id DESC LIMIT 10`;
     return db.query(q);
 };
+
+module.exports.sellProduct = (id) => {
+    const q = `UPDATE items 
+    SET availability = false
+    WHERE id = $1`;
+    const params = [id];
+    return db.query(q, params);
+};

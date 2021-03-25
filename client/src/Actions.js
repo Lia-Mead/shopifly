@@ -8,3 +8,12 @@ export async function showProducts() {
         products: data.products,
     };
 }
+
+export async function sellProduct(id) {
+    const { data } = await axios.post(`/sell-product/${id}`);
+    console.log("data.sold: ", data.sold);
+    return {
+        type: "SELL_PRODUCT",
+        idProduct: id,
+    };
+}

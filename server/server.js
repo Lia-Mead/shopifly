@@ -14,6 +14,13 @@ app.get("/homepage", async (req, res) => {
     res.json({ success: true, products: products.rows });
 });
 
+app.post("/sell-product/:id", async (req, res) => {
+    const { id } = req.params;
+    const sold = await db.sellProduct(id);
+    console.log("products: ", sold.rows);
+    res.json({ success: true, sold: sold.rows });
+});
+
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "..", "client", "index.html"));
 });

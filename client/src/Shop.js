@@ -1,4 +1,4 @@
-import { showProducts } from "./Actions";
+import { showProducts, sellProduct } from "./Actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
@@ -38,12 +38,10 @@ export default function Shop() {
                             </p>
                             <p>{item.price} EUR</p>
                             <button
-                                onClick={() =>
-                                    changeProductAvailability(item.id)
-                                }
-                                disabled={soldout == item.id}
+                                onClick={() => dispatch(sellProduct(item.id))}
+                                disabled={!item.availability}
                             >
-                                {soldout == item.id ? "SOLD OUT" : "BUY"}
+                                {item.availability ? "BUY" : "SOLD OUT"}
                             </button>
                         </div>
                     ))}
