@@ -3,6 +3,7 @@ export default function (state = {}, action) {
         state = {
             ...state,
             products: action.products,
+            availability: true,
         };
     }
 
@@ -19,6 +20,15 @@ export default function (state = {}, action) {
                     return item;
                 }
             }),
+            item: action.item,
+            availability: false,
+        };
+    }
+
+    if (action.type == "SHOW_ITEM") {
+        state = {
+            ...state,
+            item: action.item,
         };
     }
 
