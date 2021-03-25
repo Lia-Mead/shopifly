@@ -1,3 +1,29 @@
 body {
     background-color: ghostwhite;
 }
+
+.app {
+    display: flex;
+    justify-content: center;
+}
+
+.product-img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.product-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.products-con {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+}
