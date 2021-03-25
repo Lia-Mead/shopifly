@@ -1,21 +1,26 @@
-import { showProducts } from "./Actions";
+import { showProducts, sellProduct, showItem } from "./Actions";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Item from "./Item";
 
 export default function Shop() {
-    const [soldout, setSoldout] = useState(false);
+    const [popVisibible, setPopVisible] = useState(false);
     const dispatch = useDispatch();
 
     const products = useSelector(
         (state) => state.products && state.products.filter((item) => item.id)
     );
 
-    const changeProductAvailability = (id) => {
-        // console.log("e: ", e);
-        console.log("i: ", id);
+    // const togglePopup = () => {
+    //     // console.log("i: ", id);
 
-        setSoldout(id);
-    };
+    //     // need to modify this function:
+    //     //in this component create toggle for popup and keep only setpopupvisible
+    //     // in item.js > move function including 2 dispatch
+
+    //     setPopVisible(!popVisibible);
+    // };
 
     useEffect(() => {
         dispatch(showProducts());
@@ -37,19 +42,21 @@ export default function Shop() {
                                     .replace("T", " at ")}
                             </p>
                             <p>{item.price} EUR</p>
-                            <button
-                                onClick={() =>
-                                    changeProductAvailability(item.id)
-                                }
-                                disabled={soldout == item.id}
+                            <Link
+                                onClick={() => dispatch(showItem(item.id))}
+                                to={`/show-product/${item.id}`}
                             >
-                                {soldout == item.id ? "SOLD OUT" : "BUY"}
-                            </button>
+                                <button disabled={item.availability == false}>
+                                    {item.availability ? "BUY" : "SOLD OUT"}
+                                </button>
+                            </Link>
                         </div>
                     ))}
             </section>
 
-            <div className="product-box"></div>
+            {/* <div className="pop-box">
+                {popVisibible && <Item togglePopup={togglePopup} />}
+            </div> */}
         </div>
     );
 }

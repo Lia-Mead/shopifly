@@ -27,3 +27,17 @@ body {
     justify-items: center;
     gap: 20px;
 }
+
+/* .pop-up {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+} */
+
+.item-pic {
+    height: 600px;
+    width: 600px;
+    object-fit: cover;
+}

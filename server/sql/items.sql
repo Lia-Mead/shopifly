@@ -6,6 +6,7 @@
       description VARCHAR DEFAULT NULL,
       price INTEGER NOT NULL,
       img VARCHAR DEFAULT NULL,
+      availability BOOLEAN DEFAULT TRUE,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
 
