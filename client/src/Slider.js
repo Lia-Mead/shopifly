@@ -10,12 +10,13 @@ const useStyles = makeStyles({
 });
 
 function valuetext(value) {
+    // console.log(value);
     return `${value}€`;
 }
 
 export default function RangeSlider() {
     const classes = useStyles();
-    const [value, setValue] = React.useState([20, 37]);
+    const [value, setValue] = React.useState([200, 800]);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -24,10 +25,11 @@ export default function RangeSlider() {
     return (
         <div className={classes.root}>
             <Typography id="range-slider" gutterBottom>
-                What's your budget
+                What's your budget?
             </Typography>
             <Slider
                 value={value}
+                max={5000}
                 onChange={handleChange}
                 valueLabelDisplay="auto"
                 aria-labelledby="range-slider"
