@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: ghostwhite;
 }
@@ -5,6 +10,7 @@ body {
 .app {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .product-img {
