@@ -6,13 +6,6 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function App() {
-    // const [products, setProducts] = useState([]);
-    // const [itemName, setItemName] = useState("");
-    // const [itemId, setItemId] = useState("");
-    // const [itemImg, setItemImg] = useState("");
-    // const [itemDescription, setItemDescription] = useState("");
-    // const [itemCreated, setItemCreated] = useState("");
-
     // useEffect(() => {
     //     axios
     //         .get("/homepage")
