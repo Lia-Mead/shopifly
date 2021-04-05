@@ -11,19 +11,19 @@ export default function Menu() {
                 </li>
 
                 <li>
-                    <NavLink to="/chat" activeClassName="active">
+                    <NavLink to="/packages" activeClassName="active">
                         Packages
                     </NavLink>
                 </li>
 
                 <li>
-                    <NavLink to="/show-my-friends" activeClassName="active">
+                    <NavLink to="/my-account" activeClassName="active">
                         My Account
                     </NavLink>
                 </li>
 
                 <li>
-                    <NavLink to="/find-users" activeClassName="active">
+                    <NavLink to="/wish-list" activeClassName="active">
                         My wish list
                     </NavLink>
                 </li>

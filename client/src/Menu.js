@@ -20,7 +20,7 @@ export default function Menu({ toggleBurgerMenu }) {
                         className="nav-icon"
                         activeClassName="active-b"
                         onClick={toggleBurgerMenu}
-                        to="/account"
+                        to="/packages"
                     >
                         Packages
                     </NavLink>
@@ -29,7 +29,7 @@ export default function Menu({ toggleBurgerMenu }) {
                         className="nav-icon"
                         activeClassName="active-b"
                         onClick={toggleBurgerMenu}
-                        to="/my-posts"
+                        to="/my-account"
                     >
                         My Account
                     </NavLink>
@@ -38,7 +38,7 @@ export default function Menu({ toggleBurgerMenu }) {
                         className="nav-icon"
                         activeClassName="active-b"
                         onClick={toggleBurgerMenu}
-                        to="/venues"
+                        to="/wish-list"
                     >
                         My wish list
                     </NavLink>
